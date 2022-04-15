@@ -52,7 +52,17 @@
 #   genre: "Movie Score",
 #   year: 2001,
 # )
+# Song.create(
+#   url: "https://www.youtube.com/watch?v=ea2WoUtbzuw",
+#   title: "Clair de Lune",
+#   artist: "Claude Debussy",
+#   album: "Suite bergamasque",
+#   genre: "Clasical",
+#   year: 1905,
+# )
 
 # BookSong.create(book_id: 1, song_id: 1)
 # BookSong.create(book_id: 2, song_id: 2)
 # BookSong.create(book_id: 2, song_id: 3)
+# BookSong.create(book_id: 1, song_id: 4)
+# BookSong.create(book_id: 2, song_id: 4)
