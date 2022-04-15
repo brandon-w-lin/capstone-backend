@@ -1,0 +1,2 @@
+class BookSong < ApplicationRecord
+end
