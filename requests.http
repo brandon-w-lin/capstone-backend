@@ -1,0 +1,34 @@
+### BOOKS ### Index
+GET http://localhost:3000/books.json
+
+### BOOKS ### Show
+GET http://localhost:3000/books/1.json
+
+### BOOKS ### Create
+POST http://localhost:3000/books.json 
+Content-Type: application/json
+
+{
+    "isbn": "9780441172719",
+    "title": "Dune",
+    "summary": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for....",
+    "author": "Frank Herbert",
+    "publisher": "Ace",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/I/41+L9Q+rCLL._SX277_BO1,204,203,200_.jpg", 
+    "genre": "Fantasy",
+    "year": 1990
+}
+
+### BOOKS ### Update
+PATCH http://localhost:3000/books/3.json 
+Content-Type: application/json
+
+{
+    "summary": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for....When House Atreides is betrayed, the destruction of Paul's family will set the boy on a journey toward a destiny greater than he could ever have imagined. And as he evolves into the mysterious man known as Muad'Dib, he will bring to fruition humankind's most ancient and unattainable dream."
+}
+
+### BOOKS ### Delete
+DELETE http://localhost:3000/books/3.json 
+Content-Type: application/json
+
+
