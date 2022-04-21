@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### BOOKS ### Delete
-DELETE http://localhost:3000/books/3.json 
+DELETE http://localhost:3000/books/5.json 
 Content-Type: application/json
 
 ##############################################################################
@@ -68,7 +68,7 @@ Content-Type: application/json
 }
 
 ### SONGS ### Delete
-DELETE http://localhost:3000/songs/6.json 
+DELETE http://localhost:3000/songs/7.json 
 Content-Type: application/json
 
 
@@ -92,5 +92,5 @@ Content-Type: application/json
 }
 
 ### SONGS ### Delete
-DELETE http://localhost:3000/book_songs/3.json 
+DELETE http://localhost:3000/book_songs/7.json 
 Content-Type: application/json
