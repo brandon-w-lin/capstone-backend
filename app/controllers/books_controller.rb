@@ -35,7 +35,11 @@ class BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
-    @book.destroy
+    if @book.destroy
+      render json: { "message": "successfully destroyed" }
+    else
+      render json: @book.errors, status: :unprocessable_entity
+    end
   end
 
   private

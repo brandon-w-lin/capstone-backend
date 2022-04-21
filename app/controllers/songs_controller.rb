@@ -35,7 +35,11 @@ class SongsController < ApplicationController
 
   # DELETE /songs/1
   def destroy
-    @song.destroy
+    if @song.destroy
+      render json: { "message": "successfully destroyed" }
+    else
+      render json: @song.errors, status: :unprocessable_entity
+    end
   end
 
   private
