@@ -39,13 +39,15 @@ class SongsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_song
-      @song = Song.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def song_params
-      params.fetch(:song, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_song
+    @song = Song.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def song_params
+    params.fetch(:song, {})
+    params.require(:song).permit(:url, :title, :artist, :album, :genre, :year)
+  end
 end
