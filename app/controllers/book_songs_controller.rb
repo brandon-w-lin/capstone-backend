@@ -47,6 +47,7 @@ class BookSongsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def book_song_params
-    params.fetch(:book_song, {})
+    # params.fetch(:book_song, {})
+    params.require(:book_song).permit(:book_id, :song_id)
   end
 end
