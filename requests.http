@@ -1,3 +1,7 @@
+##############################################################################
+### BOOKS ###### BOOKS ###### BOOKS ###### BOOKS ###### BOOKS ###### BOOKS ###
+##############################################################################
+
 ### BOOKS ### Index
 GET http://localhost:3000/books.json
 
@@ -31,4 +35,62 @@ Content-Type: application/json
 DELETE http://localhost:3000/books/3.json 
 Content-Type: application/json
 
+##############################################################################
+### SONGS ###### SONGS ###### SONGS ###### SONGS ###### SONGS ###### SONGS ###
+##############################################################################
 
+### SONGS ### Index
+GET http://localhost:3000/songs.json
+
+### SONGS ### Show
+GET http://localhost:3000/songs/1.json
+
+### SONGS ### Create
+POST http://localhost:3000/songs.json 
+Content-Type: application/json
+
+{
+    "url": "https://www.youtube.com/watch?v=Sc8RTc6vKPE",
+    "title": "Dream of Arrakis",
+    "artist": "Hans Zimmer",
+    "album": "Dune (Original Motion Picture Soundtrack)",
+    "genre": "Movie Score",
+    "year": "2021"
+}
+
+### SONGS ### Update
+PATCH http://localhost:3000/songs/6.json 
+Content-Type: application/json
+
+{
+    "url": "https://www.youtube.com/watch?v=eESUG_arEqQ",
+    "title": "Night on Arrakis"
+}
+
+### SONGS ### Delete
+DELETE http://localhost:3000/songs/6.json 
+Content-Type: application/json
+
+
+####################################################################
+### BOOKSONGS ###### BOOKSONGS ###### BOOKSONGS ###### BOOKSONGS ###
+####################################################################
+
+### BOOKSONGS ### Index
+GET http://localhost:3000/book_songs.json
+
+### BOOKSONGS ### Show
+GET http://localhost:3000/book_songs/1.json
+
+### BOOKSONGS ### Create
+POST http://localhost:3000/book_songs.json 
+Content-Type: application/json
+
+{
+    "book_id": 3,
+    "song_id": 6
+}
+
+### SONGS ### Delete
+DELETE http://localhost:3000/book_songs/3.json 
+Content-Type: application/json
