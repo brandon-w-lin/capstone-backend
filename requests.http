@@ -94,3 +94,16 @@ Content-Type: application/json
 ### SONGS ### Delete
 DELETE http://localhost:3000/book_songs/7.json 
 Content-Type: application/json
+
+############################################################################
+### OPENLIB-API ###### OPENLIB-API ###### OPENLIB-API ###### OPENLIB-API ###
+############################################################################
+
+GET https://openlibrary.org/api/books?bibkeys=ISBN:0451526538
+
+###########################################################################
+### GOOGLE-BOOKS-API ###### GOOGLE-BOOKS-API ###### GOOGLE-BOOKS-API ######
+###########################################################################
+
+
+https://www.googleapis.com/books/v1/volumes?q=intitle=hobbit
