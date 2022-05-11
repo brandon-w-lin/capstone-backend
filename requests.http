@@ -43,28 +43,31 @@ Content-Type: application/json
 GET http://localhost:3000/songs.json
 
 ### SONGS ### Show
-GET http://localhost:3000/songs/1.json
+GET http://localhost:3000/songs/2.json
 
 ### SONGS ### Create
 POST http://localhost:3000/songs.json 
 Content-Type: application/json
 
+# {
+#     "url": "https://www.youtube.com/watch?v=Sc8RTc6vKPE",
+#     "title": "Dream of Arrakis",
+#     "artist": "Hans Zimmer",
+#     "album": "Dune (Original Motion Picture Soundtrack)",
+#     "genre": "Movie Score",
+#     "year": "2021"
+# }
+
 {
-    "url": "https://www.youtube.com/watch?v=Sc8RTc6vKPE",
-    "title": "Dream of Arrakis",
-    "artist": "Hans Zimmer",
-    "album": "Dune (Original Motion Picture Soundtrack)",
-    "genre": "Movie Score",
-    "year": "2021"
+    "url": "https://www.youtube.com/watch?v=yB-c85V8Zsg"
 }
 
 ### SONGS ### Update
-PATCH http://localhost:3000/songs/6.json 
+PATCH http://localhost:3000/songs/11.json 
 Content-Type: application/json
 
 {
-    "url": "https://www.youtube.com/watch?v=eESUG_arEqQ",
-    "title": "Night on Arrakis"
+    "year": "2021"
 }
 
 ### SONGS ### Delete

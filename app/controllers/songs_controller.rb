@@ -16,6 +16,7 @@ class SongsController < ApplicationController
   # POST /songs
   def create
     @song = Song.new(song_params)
+    @song.YTExtension = @song.parseYTExtension(@song.url)
 
     if @song.save
       render json: @song, status: :created, location: @song
@@ -27,6 +28,8 @@ class SongsController < ApplicationController
   # PATCH/PUT /songs/1
   def update
     if @song.update(song_params)
+      @song.YTExtension = @song.parseYTExtension(@song.url)
+      @song.save
       render json: @song
     else
       render json: @song.errors, status: :unprocessable_entity

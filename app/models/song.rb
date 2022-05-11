@@ -2,7 +2,7 @@ class Song < ApplicationRecord
   has_many :booksongs, foreign_key: "song_id", class_name: "BookSong"
   has_many :books, through: :booksongs
 
-  def YTExtension
+  def parseYTExtension(url)
     start = url.index("v=") + 2
     if url.include? "\u0026"
       length = url.index("\u0026") - start
