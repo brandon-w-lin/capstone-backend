@@ -1,0 +1,9 @@
+{
+  id: @song.id,
+  url: @song.url,
+  YTExtension: @song.YTExtension,
+  title: @song.YTData["items"][0]["snippet"]["title"],
+  category_id: @song.YTData["items"][0]["snippet"]["categoryId"],
+  created_at: @song.created_at,
+  updated_at: @song.updated_at,
+}

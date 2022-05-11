@@ -3,9 +3,15 @@ class SongsController < ApplicationController
 
   # GET /songs
   def index
+    # NOTE: opportunity for performance improvement here...the query runs pretty slow because it is doing an individual query to the youtube API for every song. Some options:
+    # - store the returned data in my database (how would we handle if data in the API changes?)
+    # - batch the queries (could we set it up to only batch for a size n=10, or some other limited number set by pagination?)
+
     @songs = Song.all
 
-    render json: @songs
+    # updated to use view template
+    # render json: @songs
+    render :index
   end
 
   # GET /songs/query/[query params]
@@ -23,8 +29,9 @@ class SongsController < ApplicationController
 
   # GET /songs/1
   def show
-    # @song.YTResponse = @song.queryYT
-    render json: @song
+    # updated to use view template
+    # render json: @song
+    render :show
   end
 
   # POST /songs
