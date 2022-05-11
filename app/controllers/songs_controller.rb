@@ -8,8 +8,22 @@ class SongsController < ApplicationController
     render json: @songs
   end
 
+  # GET /songs/query/[query params]
+  def search
+    query = ""
+    params.each do |k, v|
+      unless k == "controller" || k == "action"
+        query += "&#{k}=#{v}"
+      end
+    end
+    response = HTTP.get("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&key=" + Rails.application.credentials.yt_data_api_key + query)
+    render json: response.parse(:json)
+    # render json: { message: Rails.application.credentials.yt_data_api_key }
+  end
+
   # GET /songs/1
   def show
+    # @song.YTResponse = @song.queryYT
     render json: @song
   end
 
@@ -49,7 +63,8 @@ class SongsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_song
-    @song = Song.find(params[:id])
+    # @song = Song.find(params[:YTExtension])
+    @song = Song.find_by(YTExtension: params[:YTExtension])
   end
 
   # Only allow a list of trusted parameters through.

@@ -16,4 +16,19 @@ class Song < ApplicationRecord
     end
     # url.include? "\u0026"
   end
+
+  def test_method()
+    return "hello from method"
+  end
+
+  def queryYT(options)
+    query = ""
+    options.each do |k, v|
+      unless k == "controller" || k == "action"
+        query += "&#{k}=#{v}"
+      end
+    end
+    response = HTTP.get("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&key=" + Rails.application.credentials.YT_data_api_key + query)
+    return response.parse(:json)
+  end
 end

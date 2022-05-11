@@ -43,7 +43,7 @@ Content-Type: application/json
 GET http://localhost:3000/songs.json
 
 ### SONGS ### Show
-GET http://localhost:3000/songs/2.json
+GET http://localhost:3000/songs/wtHra9tFISY
 
 ### SONGS ### Create
 POST http://localhost:3000/songs.json 
@@ -110,3 +110,8 @@ GET https://openlibrary.org/api/books?bibkeys=ISBN:0451526538
 
 
 https://www.googleapis.com/books/v1/volumes?q=intitle=hobbit
+
+###
+GET http://localhost:3000/query?id=wtHra9tFISY
+###
+GET http://localhost:3000/songs/search?id=wtHra9tFISY
