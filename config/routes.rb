@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/songs" => "songs#index"
-  get "/songs/id/:YTExtension" => "songs#show"
+  get "/songs/id/:YT_extension" => "songs#show"
   post "/songs" => "songs#create"
-  patch "/songs/id/:YTExtension" => "songs#update"
-  delete "/songs/id/:YTExtension" => "songs#destroy"
+  patch "/songs/id/:YT_extension" => "songs#update"
+  delete "/songs/id/:YT_extension" => "songs#destroy"
   # get "/query" => "youtube_api#show"
   get "/songs/search" => "songs#search"
 end

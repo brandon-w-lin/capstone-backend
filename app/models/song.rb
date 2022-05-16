@@ -4,7 +4,7 @@ class Song < ApplicationRecord
   validates :url, presence: true
   validates :url, uniqueness: true
 
-  def parseYTExtension(url)
+  def parse_YT_extension(url)
     start = url.index("v=") + 2
     if url.include? "\u0026"
       length = url.index("\u0026") - start
@@ -16,7 +16,7 @@ class Song < ApplicationRecord
   end
 
   def YTData()
-    query = "&id=" + self.YTExtension
+    query = "&id=" + self.YT_extension
     response = HTTP.get("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&key=" + Rails.application.credentials.yt_data_api_key + query)
     return response.parse(:json)
   end

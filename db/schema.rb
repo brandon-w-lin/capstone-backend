@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_06_191806) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_16_163604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,33 +19,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_191806) do
     t.integer "song_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "googleID"
+    t.string "google_book_extension"
+    t.string "YT_extension"
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "isbn"
-    t.string "title"
-    t.text "summary"
-    t.string "author"
-    t.string "publisher"
-    t.string "cover_image_url"
-    t.string "genre"
-    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "googleID"
+    t.string "google_book_extension"
   end
 
   create_table "songs", force: :cascade do |t|
     t.string "url"
-    t.string "title"
-    t.string "artist"
-    t.string "album"
-    t.string "genre"
-    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "YTExtension"
+    t.string "YT_extension"
   end
 
 end

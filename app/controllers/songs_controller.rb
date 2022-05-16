@@ -37,7 +37,7 @@ class SongsController < ApplicationController
   # POST /songs
   def create
     @song = Song.new(song_params)
-    @song.YTExtension = @song.parseYTExtension(@song.url)
+    @song.YT_extension = @song.parse_YT_extension(@song.url)
 
     if @song.save
       render json: @song, status: :created, location: @song
@@ -49,7 +49,7 @@ class SongsController < ApplicationController
   # PATCH/PUT /songs/1
   def update
     if @song.update(song_params)
-      @song.YTExtension = @song.parseYTExtension(@song.url)
+      @song.YT_extension = @song.parse_YT_extension(@song.url)
       @song.save
       render json: @song
     else
@@ -70,13 +70,13 @@ class SongsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_song
-    # @song = Song.find(params[:YTExtension])
-    @song = Song.find_by(YTExtension: params[:YTExtension])
+    # @song = Song.find(params[:YT_extension])
+    @song = Song.find_by(YT_extension: params[:YT_extension])
   end
 
   # Only allow a list of trusted parameters through.
   def song_params
     # params.fetch(:song, {})
-    params.require(:song).permit(:url, :YTExtension, :title, :artist, :album, :genre, :year)
+    params.require(:song).permit(:url, :YT_extension)
   end
 end
