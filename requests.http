@@ -5,6 +5,9 @@
 ### BOOKS ### Index
 GET http://localhost:3000/books.json
 
+### BOOKS ### Get Songs
+GET http://localhost:3000/booksongs/book/Bikg274Y4Q0C.json
+
 ### BOOKS ### Show
 GET http://localhost:3000/books/1.json
 
@@ -13,14 +16,7 @@ POST http://localhost:3000/books.json
 Content-Type: application/json
 
 {
-    "isbn": "9780441172719",
-    "title": "Dune",
-    "summary": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for....",
-    "author": "Frank Herbert",
-    "publisher": "Ace",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/I/41+L9Q+rCLL._SX277_BO1,204,203,200_.jpg", 
-    "genre": "Fantasy",
-    "year": 1990
+    "google_book_extension": "GZAoAQAAIAAJ"
 }
 
 ### BOOKS ### Update
@@ -90,12 +86,12 @@ POST http://localhost:3000/book_songs.json
 Content-Type: application/json
 
 {
-    "book_id": 3,
-    "song_id": 6
+    "google_book_extension": "Bikg274Y4Q0C",
+    "YT_extension": "yB-c85V8Zsg"
 }
 
 ### SONGS ### Delete
-DELETE http://localhost:3000/book_songs/7.json 
+DELETE http://localhost:3000/book_songs/6.json 
 Content-Type: application/json
 
 ############################################################################

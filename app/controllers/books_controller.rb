@@ -1,6 +1,11 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show update destroy ]
 
+  def get_songs
+    @book = Book.find_by(google_book_extension: params[:google_book_extension])
+    render json: @book.songs
+  end
+
   # GET /books
   def index
     @books = Book.all
