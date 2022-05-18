@@ -111,3 +111,9 @@ https://www.googleapis.com/books/v1/volumes?q=intitle=hobbit
 GET http://localhost:3000/query?id=wtHra9tFISY
 ###
 GET http://localhost:3000/songs/search?id=wtHra9tFISY
+
+###
+GET http://localhost:3000/songs/search?q=harry%20potter
+
+###
+GET https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=surfing&key= Rails.application.credentials.yt_data_api_key HTTP/1.1

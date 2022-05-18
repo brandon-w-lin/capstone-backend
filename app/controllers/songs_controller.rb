@@ -14,15 +14,17 @@ class SongsController < ApplicationController
     render :index
   end
 
-  # GET /songs/query/[query params]
+  # GET /songs/query?[query params]
   def search
     query = ""
     params.each do |k, v|
       unless k == "controller" || k == "action"
-        query += "&#{k}=#{v}"
+        query += "&#{k}=#{v.split(" ").join("%20")}"
       end
     end
-    response = HTTP.get("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&key=" + Rails.application.credentials.yt_data_api_key + query)
+    # response = HTTP.get("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=" + Rails.application.credentials.yt_data_api_key + "&q=potter")
+    # render json: { query: query }
+    response = HTTP.get("https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=" + Rails.application.credentials.yt_data_api_key + query)
     render json: response.parse(:json)
     # render json: { message: Rails.application.credentials.yt_data_api_key }
   end
