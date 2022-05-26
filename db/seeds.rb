@@ -67,4 +67,6 @@
 # BookSong.create(book_id: 1, song_id: 4)
 # BookSong.create(book_id: 2, song_id: 4)
 
-BookSong.create(googleID: "e_9MDwAAQBAJ", song_id: 6)
+Book.create(google_book_extension: "wrOQLV6xB-wC")
+Song.create(YT_extension: "wtHra9tFISY")
+BookSong.create(google_book_extension: "wrOQLV6xB-wC", YT_extension: "wtHra9tFISY")
