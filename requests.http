@@ -55,7 +55,7 @@ Content-Type: application/json
 # }
 
 {
-    "url": "https://www.youtube.com/watch?v=yB-c85V8Zsg"
+    "url": "https://www.youtube.com/watch?v=BdtiYwSP9ko"
 }
 
 ### SONGS ### Update
@@ -86,8 +86,8 @@ POST http://localhost:3000/book_songs.json
 Content-Type: application/json
 
 {
-    "google_book_extension": "Bikg274Y4Q0C",
-    "YT_extension": "yB-c85V8Zsg"
+    "google_book_extension": "e_9MDwAAQBAJ",
+    "YT_extension": "4SUGPyZDmVI"
 }
 
 ### SONGS ### Delete
