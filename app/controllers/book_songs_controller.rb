@@ -16,6 +16,16 @@ class BookSongsController < ApplicationController
 
   # POST /book_songs
   def create
+    if Book.find_by(google_book_extension: params[:google_book_extension]) == nil
+      request.params[:google_book_extension] = params[:google_book_extension]
+      BooksController.dispatch(:create, request, response)
+    end
+
+    if Song.find_by(YT_extension: params[:YT_extension]) == nil
+      request.params[:YT_extension] = params[:YT_extension]
+      SongsController.dispatch(:create, request, response)
+    end
+
     @book_song = BookSong.new(
       # Option 1: returns ID of book if already in database
       # Option 2: returns ID of a new book that is created
