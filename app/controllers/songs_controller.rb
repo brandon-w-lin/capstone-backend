@@ -39,10 +39,17 @@ class SongsController < ApplicationController
   # POST /songs
   def create
     @song = Song.new(song_params)
-    @song.YT_extension = @song.parse_YT_extension(@song.url)
+    # if @song.YT_extension == nil
+    #   @song.YT_extension = @song.parse_YT_extension(@song.url)
+    # end
+    # if @song.url == nil
+    #   @song.url = "https://www.youtube.com/watch?v=" + @song.YT_extension
+    # end
 
     if @song.save
-      render json: @song, status: :created, location: @song
+      ### FIX NEEDED ###
+      # Need to figure out how to render this when called directly, but do not render whenever this method is being called from the booksongs create
+      # render json: @song, status: :created, location: @song
     else
       render json: @song.errors, status: :unprocessable_entity
     end
@@ -51,7 +58,7 @@ class SongsController < ApplicationController
   # PATCH/PUT /songs/1
   def update
     if @song.update(song_params)
-      @song.YT_extension = @song.parse_YT_extension(@song.url)
+      # @song.YT_extension = @song.parse_YT_extension(@song.url)
       @song.save
       render json: @song
     else
@@ -79,6 +86,6 @@ class SongsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def song_params
     # params.fetch(:song, {})
-    params.require(:song).permit(:url, :YT_extension)
+    params.require(:song).permit(:YT_extension)
   end
 end
